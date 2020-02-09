@@ -10,7 +10,7 @@ services:
     restart: always
 
   service.rss:
-    image: wangqiru/ttrss:latest
+    image: hoilc/ttrss:latest
     container_name: ttrss
     ports:
       - 181:80
