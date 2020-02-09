@@ -46,11 +46,11 @@ if(dbcheckconn($config)){
     }
 
    $textsearch_extension = env('TEXTSEARCH_EXTENSION', '');
-    if (strpos($fulltext_extension, "zhparser") !== FALSE) {
+    if (strpos($textsearch_extension, "zhparser") !== FALSE) {
         echo 'Apply extension zhparser... ' . PHP_EOL;
         $pdo->exec("DO \$\$BEGIN CREATE EXTENSION zhparser; CREATE TEXT SEARCH CONFIGURATION zhparser (PARSER = zhparser); ALTER TEXT SEARCH CONFIGURATION zhparser ADD MAPPING FOR n,v,a,i,e,l WITH simple; EXCEPTION WHEN unique_violation THEN NULL; END;\$\$;");
     }
-    if (strpos($fulltext_extension, "pg_jieba") !== FALSE) {
+    if (strpos($textsearch_extension, "pg_jieba") !== FALSE) {
         echo 'Apply extension pg_jieba... ' . PHP_EOL;
         $pdo->exec("DO \$\$BEGIN CREATE EXTENSION pg_jieba; EXCEPTION WHEN unique_violation THEN NULL; END;\$\$;");
     }
