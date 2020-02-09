@@ -63,6 +63,7 @@ docker run -it --name ttrss --restart=always \
 - SESSION_COOKIE_LIFETIME: 使用网页版登陆时 cookie 过期时间，单位为小时，默认为 `24` 小时
 - HTTP_PROXY: `ip:port`, TTRSS 实例的全局代理, 为源地址添加单独代理请使用 [Options per Feed](#options-per-feed)
 - SINGLE_USER_MODE: `true` 为开启单用户模式，同时关闭用户认证，无需登录即可使用。**请仅在安全环境下开启**
+- TEXTSEARCH_EXTENSION: 启用的数据库搜索插件，可选`pg_jieba`或`zhparser`，也可以通过`pg_jieba,zhparser`同时启用
 
 ### 配置 HTTPS
 
